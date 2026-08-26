@@ -1,0 +1,10 @@
+Week 6.1 Margin and Padding
+
+margin adalah ruang kosong di luar batas (border) elemen untuk menjauhkan elemen dari elemen lain. Sebaliknya, padding adalah ruang kosong di dalam elemen, yaitu jarak antara konten (teks/gambar) dan batas garisnya.
+
+
+margin: 20px 20px 20px 20px;:
+Nilai ke-1 → atas (top)
+Nilai ke-2 → kanan (right)
+Nilai ke-3 → bawah (bottom)
+Nilai ke-4 → kiri (left)
