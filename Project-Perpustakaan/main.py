@@ -1,19 +1,3 @@
-"""
-main.py
--------
-Entry point aplikasi desktop Perpustakaan Digital.
-
-Struktur file:
-- config.py    -> konfigurasi warna/font, util penyimpanan user, HoverButton
-- homepage.py  -> Halaman Home (blog sederhana + tombol Login/Sign Up)
-- signup.py    -> Halaman Sign Up (khusus daftar)
-- signin.py    -> Halaman Sign In (khusus login)
-- main.py      -> file ini, controller yang menggabungkan semua halaman
-
-Jalankan dengan:
-    python main.py
-"""
-
 import tkinter as tk
 
 from config import APP_WIDTH, APP_HEIGHT, COLOR_BG
@@ -30,10 +14,8 @@ class PerpustakaanApp(tk.Tk):
         self.resizable(False, False)
         self.configure(bg=COLOR_BG)
 
-        # Status user yang sedang login (None jika belum login)
         self.current_user = None
 
-        # Container utama tempat semua halaman ditumpuk
         container = tk.Frame(self, bg=COLOR_BG)
         container.pack(fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
@@ -49,7 +31,6 @@ class PerpustakaanApp(tk.Tk):
         self.show_frame("HomePage")
 
     def show_frame(self, page_name: str):
-        """Tampilkan halaman berdasarkan nama kelasnya."""
         frame = self.frames[page_name]
         if hasattr(frame, "on_show"):
             frame.on_show()

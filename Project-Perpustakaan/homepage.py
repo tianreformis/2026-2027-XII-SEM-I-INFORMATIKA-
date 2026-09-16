@@ -1,4 +1,3 @@
-
 import tkinter as tk
 from config import (
     COLOR_PRIMARY, COLOR_ACCENT, COLOR_ACCENT_DARK, COLOR_BG, COLOR_CARD,
@@ -17,7 +16,7 @@ class HomePage(tk.Frame):
         navbar.pack_propagate(False)
 
         logo_label = tk.Label(
-            navbar, text="📚  Perpustakaan Digital",
+            navbar, text="Perpustakaan Digital",
             bg=COLOR_PRIMARY, fg="white", font=("Segoe UI", 16, "bold")
         )
         logo_label.pack(side="left", padx=30)
@@ -25,7 +24,7 @@ class HomePage(tk.Frame):
         self.nav_right = tk.Frame(navbar, bg=COLOR_PRIMARY)
         self.nav_right.pack(side="right", padx=30)
 
- 
+
         hero = tk.Frame(self, bg=COLOR_ACCENT, height=180)
         hero.pack(fill="x")
         hero.pack_propagate(False)
@@ -52,7 +51,6 @@ class HomePage(tk.Frame):
             bg=COLOR_BG, fg=COLOR_TEXT, font=("Segoe UI", 16, "bold")
         ).pack(anchor="w", pady=(0, 15))
 
-        # Grid kartu artikel (2 kolom)
         cards_frame = tk.Frame(content_area, bg=COLOR_BG)
         cards_frame.pack(fill="both", expand=True)
         cards_frame.grid_columnconfigure(0, weight=1)
@@ -62,7 +60,6 @@ class HomePage(tk.Frame):
             row, col = divmod(idx, 2)
             self._build_article_card(cards_frame, artikel, row, col)
 
-        # Footer kecil
         footer = tk.Frame(self, bg=COLOR_PRIMARY, height=36)
         footer.pack(fill="x", side="bottom")
         footer.pack_propagate(False)
@@ -93,7 +90,6 @@ class HomePage(tk.Frame):
         ).pack(anchor="w", padx=18, pady=(6, 18))
 
     def on_show(self):
-        """Dipanggil setiap kali HomePage ditampilkan -> refresh navbar sesuai status login."""
         for widget in self.nav_right.winfo_children():
             widget.destroy()
 

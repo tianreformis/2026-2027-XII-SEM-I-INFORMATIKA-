@@ -1,5 +1,3 @@
-
-
 import tkinter as tk
 from tkinter import messagebox
 from config import (
@@ -28,42 +26,36 @@ class SignUpPage(tk.Frame):
             bg=COLOR_CARD, fg=COLOR_MUTED, font=FONT_SUBTITLE
         ).grid(row=1, column=0, columnspan=2, pady=(0, 25), sticky="w")
 
-        # Username
         tk.Label(card, text="Username", bg=COLOR_CARD, fg=COLOR_TEXT,
                  font=FONT_LABEL).grid(row=2, column=0, columnspan=2, sticky="w")
         self.entry_username = tk.Entry(card, font=FONT_LABEL, width=35,
                                         relief="solid", bd=1)
         self.entry_username.grid(row=3, column=0, columnspan=2, pady=(4, 15), ipady=6)
 
-        # Email
         tk.Label(card, text="Email", bg=COLOR_CARD, fg=COLOR_TEXT,
                  font=FONT_LABEL).grid(row=4, column=0, columnspan=2, sticky="w")
         self.entry_email = tk.Entry(card, font=FONT_LABEL, width=35,
                                      relief="solid", bd=1)
         self.entry_email.grid(row=5, column=0, columnspan=2, pady=(4, 15), ipady=6)
 
-        # Password
         tk.Label(card, text="Password", bg=COLOR_CARD, fg=COLOR_TEXT,
                  font=FONT_LABEL).grid(row=6, column=0, columnspan=2, sticky="w")
         self.entry_password = tk.Entry(card, font=FONT_LABEL, width=35,
                                         relief="solid", bd=1, show="*")
         self.entry_password.grid(row=7, column=0, columnspan=2, pady=(4, 15), ipady=6)
 
-        # Konfirmasi Password
         tk.Label(card, text="Konfirmasi Password", bg=COLOR_CARD, fg=COLOR_TEXT,
                  font=FONT_LABEL).grid(row=8, column=0, columnspan=2, sticky="w")
         self.entry_confirm = tk.Entry(card, font=FONT_LABEL, width=35,
                                        relief="solid", bd=1, show="*")
         self.entry_confirm.grid(row=9, column=0, columnspan=2, pady=(4, 20), ipady=6)
 
-        # Tombol Daftar
         HoverButton(
             card, bg_normal=COLOR_ACCENT, bg_hover=COLOR_ACCENT_DARK,
             text="Daftar Sekarang", fg="white", font=FONT_BUTTON, bd=0,
             cursor="hand2", command=self.handle_signup
         ).grid(row=10, column=0, columnspan=2, sticky="ew", ipady=10)
 
-        # Link ke halaman login
         bottom_frame = tk.Frame(card, bg=COLOR_CARD)
         bottom_frame.grid(row=11, column=0, columnspan=2, pady=(20, 0))
         tk.Label(bottom_frame, text="Sudah punya akun?", bg=COLOR_CARD,
@@ -74,7 +66,6 @@ class SignUpPage(tk.Frame):
         link.pack(side="left")
         link.bind("<Button-1>", lambda e: controller.show_frame("SignInPage"))
 
-        # Tombol kembali ke home
         back_link = tk.Label(card, text="← Kembali ke Beranda", bg=COLOR_CARD,
                               fg=COLOR_MUTED, font=("Segoe UI", 10, "underline"),
                               cursor="hand2")

@@ -1,14 +1,3 @@
-"""
-config.py
----------
-Konfigurasi bersama untuk seluruh halaman aplikasi:
-- Ukuran window
-- Palet warna & font
-- Util penyimpanan user (JSON) + hashing password
-- Komponen HoverButton yang dipakai di banyak halaman
-- Data dummy artikel untuk blog sederhana di Home Page
-"""
-
 import tkinter as tk
 import json
 import os
@@ -21,11 +10,11 @@ APP_HEIGHT = 720
 USERS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "users.json")
 
 
-COLOR_PRIMARY = "#2c3e50"     # biru dongker (header/navbar)
-COLOR_ACCENT = "#2980b9"      # biru terang (tombol utama)
+COLOR_PRIMARY = "#2c3e50"
+COLOR_ACCENT = "#2980b9"
 COLOR_ACCENT_DARK = "#1c5980"
-COLOR_BG = "#f4f6f7"          # latar halaman
-COLOR_CARD = "#ffffff"        # kartu artikel
+COLOR_BG = "#f4f6f7"
+COLOR_CARD = "#ffffff"
 COLOR_TEXT = "#2c3e50"
 COLOR_MUTED = "#7f8c8d"
 COLOR_SUCCESS = "#27ae60"
@@ -71,7 +60,6 @@ ARTIKEL_PERPUSTAKAAN = [
 
 
 def hash_password(password: str) -> str:
-    """Hash password dengan SHA-256 supaya tidak disimpan dalam plain text."""
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
 
 
