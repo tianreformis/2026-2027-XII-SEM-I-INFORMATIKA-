@@ -1,4 +1,5 @@
 {
-    "editor.fontSize": 42,
+    "editor.fontSize": 46,
+    "editor.fontWeight": "bold",
     "editor.fontLigatures": true
 }
