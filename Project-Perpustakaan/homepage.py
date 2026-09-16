@@ -1,12 +1,3 @@
-"""
-homepage.py
------------
-Halaman utama (Home Page):
-- Navbar dengan logo + tombol Login / Sign Up (atau info user jika sudah login)
-- Hero section sambutan
-- Blog sederhana berisi kartu-kartu artikel/informasi perpustakaan
-- Footer
-"""
 
 import tkinter as tk
 from config import (
@@ -21,7 +12,6 @@ class HomePage(tk.Frame):
         super().__init__(parent, bg=COLOR_BG)
         self.controller = controller
 
-        # ---------------- NAVBAR ----------------
         navbar = tk.Frame(self, bg=COLOR_PRIMARY, height=70)
         navbar.pack(fill="x", side="top")
         navbar.pack_propagate(False)
@@ -32,11 +22,10 @@ class HomePage(tk.Frame):
         )
         logo_label.pack(side="left", padx=30)
 
-        # Frame kanan navbar untuk tombol auth (dinamis: login/signup ATAU info user)
         self.nav_right = tk.Frame(navbar, bg=COLOR_PRIMARY)
         self.nav_right.pack(side="right", padx=30)
 
-        # ---------------- HERO SECTION ----------------
+ 
         hero = tk.Frame(self, bg=COLOR_ACCENT, height=180)
         hero.pack(fill="x")
         hero.pack_propagate(False)
@@ -55,7 +44,6 @@ class HomePage(tk.Frame):
             bg=COLOR_ACCENT, fg="#eaf2f8", font=FONT_SUBTITLE
         ).pack()
 
-        # ---------------- BLOG SECTION ----------------
         content_area = tk.Frame(self, bg=COLOR_BG)
         content_area.pack(fill="both", expand=True, padx=40, pady=25)
 
