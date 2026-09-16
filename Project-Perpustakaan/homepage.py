@@ -100,6 +100,13 @@ class HomePage(tk.Frame):
             ).pack(side="left", padx=(0, 15))
 
             HoverButton(
+                self.nav_right, bg_normal=COLOR_ACCENT, bg_hover=COLOR_ACCENT_DARK,
+                text="Dashboard", fg="white", font=FONT_NAV, bd=0, padx=18, pady=8,
+                cursor="hand2",
+                command=lambda: self.controller.show_frame("BookManagementPage")
+            ).pack(side="left", padx=(0, 10))
+
+            HoverButton(
                 self.nav_right, bg_normal="#c0392b", bg_hover="#a93226",
                 text="Logout", fg="white", font=FONT_NAV, bd=0, padx=18, pady=8,
                 cursor="hand2", command=self.controller.logout

@@ -4,6 +4,9 @@ from config import APP_WIDTH, APP_HEIGHT, COLOR_BG
 from homepage import HomePage
 from signup import SignUpPage
 from signin import SignInPage
+from bookmanagement import BookManagementPage
+from borrowingmanagement import BorrowingManagementPage
+from usersmanagement import UsersManagementPage
 
 
 class PerpustakaanApp(tk.Tk):
@@ -22,7 +25,7 @@ class PerpustakaanApp(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for PageClass in (HomePage, SignUpPage, SignInPage):
+        for PageClass in (HomePage, SignUpPage, SignInPage, BookManagementPage, BorrowingManagementPage, UsersManagementPage):
             page_name = PageClass.__name__
             frame = PageClass(parent=container, controller=self)
             self.frames[page_name] = frame

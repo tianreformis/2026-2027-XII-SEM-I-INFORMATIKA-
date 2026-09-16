@@ -75,7 +75,7 @@ class SignInPage(tk.Frame):
             self.controller.set_current_user(username)
             messagebox.showinfo("Berhasil", f"{message} Selamat datang, {username}!")
             self.clear_fields()
-            self.controller.show_frame("HomePage")
+            self.controller.show_frame("BookManagementPage")
         else:
             messagebox.showerror("Login Gagal", message)
 
